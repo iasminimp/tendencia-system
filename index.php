@@ -6,8 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Login - Tendencias </title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Pagina de login do Tendencias - System" name="description">
+  <meta content="login" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -47,10 +47,10 @@
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Tendência System </h5>
-                    <p class="text-center small">Entre com seu email e senha</p>
+                    <p class="text-center small">Entre com seu usuário e senha</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3" action="testLogin.php" method="POST" >
 
                    <!-- <div class="col-12">
                       <label for="username" class="form-label">Username</label>
@@ -60,9 +60,9 @@
                          <div class="invalid-feedback">Entre com seu Nome do usuário válido.</div>
                       </div>
                     </div> -->
-                    <div class="col-12">
-                      <label for="nome_user" class="form-label">Nome</label>
-                      <input type="text" name="nome_user" class="form-control" id="nome_user" required>
+                    <div class="col-12 " action="cadastro.php" method="POST">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" name="username" class="form-control" id="username" required>
                       <!-- <div class="invalid-feedback">Entre com seu Senha válido!</div>-->
                     </div><br>
 
@@ -79,7 +79,8 @@
                       </div>
                     </div>-->
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Entrar</button>
+                      <input class="btn btn-primary w-100" type="submit" name="submit" id="submit" value="Entrar">
+                      <!-- <button class="btn btn-primary w-100" type="submit">Entrar</button>-->
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Não possui uma conta? <a href="cadastro.php">Criar uma Conta</a></p>

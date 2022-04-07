@@ -20,7 +20,9 @@
     $result=mysqli_query($conexao, "INSERT INTO usuarios(nome_user, email_user,username,senha_user) 
       VALUES ('$nome_user', '$email_user','$username', '$senha_user')");
 
-  }
+    header('Location: index.php');
+
+}
 ?>
 
 <!DOCTYPE html>

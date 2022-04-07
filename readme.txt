@@ -32,6 +32,17 @@ dbname = tendencia_bd
 
 07/04 -09:42: cadastro do usuario no bd ja esta funcionando normal
 
-[] fazer a verificação de usuario/ login
-[] caso correto, entra no painel
-// caso contrario barra o usuario, e pede pra ele criar um cadastro;
+fazer a verificação de usuario/ login [ok]
+caso correto, entra no painel [ok]
+
+07/04 - 18:41: funcionando a verificação do login, ja entra no painel adm/ sistema
+
+
+// caso contrario barra o usuario, e pede pra ele criar um cadastro; 
+
+//criar uma notificação caso o usuario nao digite a senha ou usuario correto
+
+// criar a opçao de recuperação de senha;
+
+
+// passar parte da API
