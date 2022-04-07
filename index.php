@@ -52,32 +52,37 @@
 
                   <form class="row g-3 needs-validation" novalidate>
 
-                    <div class="col-12">
-                      <label for="yourNome do usuário" class="form-label">Nome do usuário</label>
+                   <!-- <div class="col-12">
+                      <label for="username" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="Nome do usuário" class="form-control" id="yourNome do usuário" required>
-                        <div class="invalid-feedback">Entre com seu Nome do usuário válido.</div>
+                        <input type="text" name="username" class="form-control" id="username" required>
+                         <div class="invalid-feedback">Entre com seu Nome do usuário válido.</div>
                       </div>
-                    </div>
+                    </div> -->
+                    <div class="col-12">
+                      <label for="nome_user" class="form-label">Nome</label>
+                      <input type="text" name="nome_user" class="form-control" id="nome_user" required>
+                      <!-- <div class="invalid-feedback">Entre com seu Senha válido!</div>-->
+                    </div><br>
 
                     <div class="col-12">
-                      <label for="yourSenha" class="form-label">Senha</label>
-                      <input type="Senha" name="Senha" class="form-control" id="yourSenha" required>
-                      <div class="invalid-feedback">Entre com seu Senha válido!</div>
+                      <label for="senha_user" class="form-label">Senha</label>
+                      <input type="password" name="senha_user" class="form-control" id="senha_user" required>
+                      <!-- <div class="invalid-feedback">Entre com seu Senha válido!</div>-->
                     </div>
 
-                    <div class="col-12">
+                    <!--<div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
                         <label class="form-check-label" for="rememberMe">Lembrar-me</label>
                       </div>
-                    </div>
+                    </div>-->
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Entrar</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Não possui uma conta? <a href="pages-register.html">Criar uma Conta</a></p>
+                      <p class="small mb-0">Não possui uma conta? <a href="cadastro.php">Criar uma Conta</a></p>
                     </div>
                   </form>
 

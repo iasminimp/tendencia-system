@@ -1,3 +1,28 @@
+<?php
+  #verificação se o formulario foi preenchido corretamente
+  if(isset($_POST['submit'])){
+    
+    #verificando se as variaveis estao chegando corretamente
+    /*print_r('Nome:'.$_POST['nome_user']);print_r('<br>');
+    print_r('E-mail:'.$_POST['email_user']);print_r('<br>');
+    print_r('Username:'.$_POST['username']);print_r('<br>');
+    print_r('Senha:'.$_POST['senha_user']);print_r('<br>');*/
+
+    include_once('config.php'); #incluindo a conexão com bd
+    
+    #pegando cada variavel com o metodo post do formulario 
+    $nome_user=$_POST['nome_user'];
+    $email_user=$_POST['email_user'];
+    $username=$_POST['username'];
+    $senha_user=$_POST['senha_user'];
+
+    #query-mysqli
+    $result=mysqli_query($conexao, "INSERT INTO usuarios(nome_user, email_user,username,senha_user) 
+      VALUES ('$nome_user', '$email_user','$username', '$senha_user')");
+
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,47 +77,45 @@
                     <p class="text-center small">Preencha os campos com seus dados</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">Nome</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Entrar com um nome valido!</div>
-                    </div>
 
-                    <div class="col-12">
-                      <label for="yourEmail" class="form-label">E-mail</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
-                      <div class="invalid-feedback">Please enter a valid Email adddress!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label">Username</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please choose a username.</div>
+                  <form class="row g-3" action="cadastro.php" method="POST">
+                    <fieldset>
+                      <div class="col-12">
+                        <label for="nome_user" class="form-label">Nome</label>
+                        <input type="text" name="nome_user" class="form-control" id="nome_user" required>
+                        <!-- <div class="invalid-feedback">Entrar com um nome valido!</div>-->
                       </div>
-                    </div>
 
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label">Senha</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">Eu concordo com os  <a href="#">termos e condições</a></label>
-                        <div class="invalid-feedback">Você deve aceitar antes de prosseguir com o cadastro</div>
+                      <div class="col-12">
+                        <label for="email_user" class="form-label">E-mail</label>
+                        <input type="email" name="email_user" class="form-control" id="email_user" required>
+                        <!-- <div class="invalid-feedback">Please enter a valid Email adddress!</div>-->
                       </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Já possui uma conta? <a href="index.html">Entrar</a></p>
-                    </div>
+
+                      <div class="col-12">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="username" required>
+                        
+                      </div>
+
+
+                      <div class="col-12">
+                        <label for="senha_user" class="form-label">Senha</label>
+                        <input type="password" name="senha_user" class="form-control" id="senha_user" required>
+                        <!--<div class="invalid-feedback">Please enter your password!</div>-->
+                      </div> <br>
+
+
+                      <div class="col-12">
+                        <input class="btn btn-primary w-100" type="submit" name="submit" id="submit">
+                        <!-- <button class="btn btn-primary w-100" type="submit">Criar</button>-->
+                      </div><br>
+                      <div class="col-12">
+                        <p class="small mb-0">Já possui uma conta? <a href="index.php">Entrar</a></p>
+                      </div>
+                    
+
+                    </fieldset>
                   </form>
 
                 </div>

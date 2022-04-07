@@ -14,13 +14,24 @@
 * Apresentar estes dados, da forma que lhe for mais conveniente.
 
 
-//to do 
- - pay doc moto
- - travel vix
- - pay vivo count
- - bekoo ?
- - seguro - moto;
- - mandar mensagen estagio - prefeitura
- - pegar Money - FVC
- - 
- - casa RIO (rock in rio)
+//utilização de banco de dados - phpMyAdmin
+//entrar na plataforma:
+username
+senha
+
+//cadastro usuario
+id - int (key)
+nome_user (varchar)
+email_user (varchar)
+username (varchar)
+senha_user (varchar)
+
+dbname = tendencia_bd
+
+//conexao com o banco de dados é feita atraves do arquivo config.php
+
+07/04 -09:42: cadastro do usuario no bd ja esta funcionando normal
+
+[] fazer a verificação de usuario/ login
+[] caso correto, entra no painel
+// caso contrario barra o usuario, e pede pra ele criar um cadastro;
