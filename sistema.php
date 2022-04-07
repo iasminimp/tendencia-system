@@ -55,7 +55,7 @@
         <p class="text-center">Seja Bem Vindo <u><?php echo $logado; ?> </u></p>
         
         <div class="text-center ">
-            <a href="sair.php" class="btn btn-danger"> Sair</a>
+            <a href="sair.php" class="btn btn-outline-danger"> Sair</a>
         </div>
 
     </div>

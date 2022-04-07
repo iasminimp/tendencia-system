@@ -22,14 +22,15 @@
         if(mysqli_num_rows($result)<1){
             
             unset($_SESSION['username']);
-            unset($_SESSION['senha_user']);       
+            unset($_SESSION['senha_user']); 
+            $_SESSION['nao_autenticado']=true;      
             
             header('Location: index.php');
 
         }else{ #entra no sistema
             $_SESSION['username']=$username;
             $_SESSION['senha_user']=$senha_user;
-            
+
             header('Location: sistema.php');
         }
     }else{ #caso contrario, permanece na pagina de login

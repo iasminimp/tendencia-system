@@ -1,3 +1,8 @@
+<?php
+   session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,6 +54,20 @@
                     <h5 class="card-title text-center pb-0 fs-4">Tendência System </h5>
                     <p class="text-center small">Entre com seu usuário e senha</p>
                   </div>
+
+                  <?php
+                        if(isset($_SESSION['nao_autenticado'])):
+                    ?>
+                    <div class="alert alert-danger" role="alert">
+                      <p><bold>ERRO:</bold> Usuário ou senha inválidos.</p>
+                    </div>
+
+                    <?php  
+                        endif;
+                        unset($_SESSION['nao_autenticado']);
+                    ?>
+
+
 
                   <form class="row g-3" action="testLogin.php" method="POST" >
 

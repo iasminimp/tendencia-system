@@ -42,7 +42,9 @@ caso correto, entra no painel [ok]
 
 //criar uma notificação caso o usuario nao digite a senha ou usuario correto
 
-// criar a opçao de recuperação de senha;
 
+07/04 - 18:57: adicionado a notificação de erro 
+
+// criar a opçao de recuperação de senha;
 
 // passar parte da API
