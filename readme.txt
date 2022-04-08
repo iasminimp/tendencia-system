@@ -45,6 +45,43 @@ caso correto, entra no painel [ok]
 
 07/04 - 18:57: adicionado a notificação de erro 
 
-// criar a opçao de recuperação de senha;
 
-// passar parte da API
+08/04 - 08:40: recuperação de senha criada/ esqueceu a senha?
+[ok] criação da view recuperar senha;
+[ok] fazer a validação de email (se possui ou nao esse email no banco de dados); 
+[ok] fazer o update da senha no bd e enviar o email com a nova senha para o usuario;
+obs. 1: a função mail (nao funciona localmente/ localhost) so funciona quando esta hospedado, para testar se esta alterando a senha, basta colocar uma condicional verdadeira no codigo, como por exemplo if (1==1)
+Isso no arquivo `esqueceusenha.php`, onde está:
+
+| if (mail ($email_user, "Sua nova senha", "Sua nova senha: ".$novasenha)){
+
+colocar:
+
+| if (1==1){
+
+obs. 2: ao colocar em um dominio, exemplo hostgator, pode ser que aja um problema na função header - Location do php. 
+Uma solução, que achei foi onde esta a função location, substituir pela função meta do html. Como por exemplo:
+
+| header ("Location: index.php");
+
+Substituir por:
+
+|  <meta http-equiv="refresh" content="0;url=https:url_do_projeto/index.php">
+
+
+- fazer ajustes na view de recuperação de senha, front-end (notificações e campos do formulário);
+08/04- 11:46
+
+To-do List -------------------------------
+// passar para parte da API;
+//passar todo o codigo para o github;
+//fazer a documentação da aplicação;
+//Adicional: Upar para o dominio na hostgator para testes;
+
+
+//funções para se adicionar futuramente: o recap/check: sou humano
+//funções para se adicionar futuramente: melhorar a verificação de troca de senha
+//usar um criptografia melhor para o armazenamento de senha; (hash, md5)
+//o usuário ter a possibilidade de criar uma nova senha, e nao o sistema da uma nova senha;
+//verificação de senha, podem existir emails iguais; (ao mudar a senha, ira mudar de todos os usuario que possuem aquele determinado email);
+// a pessoa pode esquecer o nome de usuario, nao tem como recuperar: fazer algo mais para frente para tentar lifar com esse tipo de caso;

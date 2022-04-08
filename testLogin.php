@@ -19,7 +19,7 @@
         #verificando se existe esse usuario no banco de dados
         $sql = "SELECT * FROM usuarios WHERE username = '$username' and senha_user ='$senha_user'";
         $result = $conexao->query($sql);
-        if(mysqli_num_rows($result)<1){
+        if(mysqli_num_rows($result)<1){ #nao entra no sistema
             
             unset($_SESSION['username']);
             unset($_SESSION['senha_user']); 

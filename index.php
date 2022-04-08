@@ -88,9 +88,9 @@
                     <div class="col-12">
                       <label for="senha_user" class="form-label">Senha</label>
                       <input type="password" name="senha_user" class="form-control" id="senha_user" required>
+                      <p class="small mb-0 text-end">Esqueceu sua senha? <a href="esqueceusenha.php">Recuperar Senha</a></p>
                       <!-- <div class="invalid-feedback">Entre com seu Senha válido!</div>-->
                     </div>
-
                     <!--<div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
