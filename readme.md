@@ -87,10 +87,10 @@ Algumas observações sobre o projeto
 08/04- 11:46
 
 ## To-do List -------------------------------
-	* [] passar para parte da API; <br>
-	* []passar todo o codigo para o github; <br>
-	* []fazer a documentação da aplicação; <br>
-	* []Adicional: Upar para o dominio na hostgator para testes; <br>
+	 [] passar para parte da API; 
+	 []passar todo o codigo para o github; 
+	 []fazer a documentação da aplicação; 
+	 []Adicional: Upar para o dominio na hostgator para testes;
 
 
 ## Funções para se adicionar futuramente
