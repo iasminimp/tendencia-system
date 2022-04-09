@@ -20,7 +20,7 @@
     $result=mysqli_query($conexao, "INSERT INTO usuarios(nome_user, email_user,username,senha_user) 
       VALUES ('$nome_user', '$email_user','$username', '$senha_user')");
 
-    header('Location: index.php');
+    header('Location: cad_sucesso.php');
 
 }
 ?>
@@ -69,7 +69,6 @@
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-
               <div class="card mb-3">
 
                 <div class="card-body">
@@ -79,38 +78,31 @@
                     <p class="text-center small">Preencha os campos com seus dados</p>
                   </div>
 
-
                   <form class="row g-3" action="cadastro.php" method="POST">
                     <fieldset>
                       <div class="col-12">
                         <label for="nome_user" class="form-label">Nome</label>
                         <input type="text" name="nome_user" class="form-control" id="nome_user" required>
-                        <!-- <div class="invalid-feedback">Entrar com um nome valido!</div>-->
                       </div>
 
                       <div class="col-12">
                         <label for="email_user" class="form-label">E-mail</label>
                         <input type="email" name="email_user" class="form-control" id="email_user" required>
-                        <!-- <div class="invalid-feedback">Please enter a valid Email adddress!</div>-->
                       </div>
 
                       <div class="col-12">
                         <label for="username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" required>
-                        
+                        <input type="text" name="username" class="form-control" id="username" required> 
                       </div>
-
 
                       <div class="col-12">
                         <label for="senha_user" class="form-label">Senha</label>
-                        <input type="password" name="senha_user" class="form-control" id="senha_user" required>
-                        <!--<div class="invalid-feedback">Please enter your password!</div>-->
+                        <input type="password" name="senha_user" class="form-control" id="senha_user" required>                  
                       </div> <br>
 
 
                       <div class="col-12">
                         <input class="btn btn-primary w-100" type="submit" name="submit" id="submit">
-                        <!-- <button class="btn btn-primary w-100" type="submit">Criar</button>-->
                       </div><br>
                       <div class="col-12">
                         <p class="small mb-0">Já possui uma conta? <a href="index.php">Entrar</a></p>

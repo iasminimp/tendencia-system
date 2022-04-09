@@ -9,7 +9,7 @@
 
     #verificação de conexão
     if($conexao->connect_errno){
-        echo "Erro";
+        echo "Erro na conexão com banco de dados.";
     }else{
         //echo "Conexão efetuada com sucesso";
     }

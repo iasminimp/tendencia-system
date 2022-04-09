@@ -1,5 +1,7 @@
 <?php
     include('config.php');
+    session_start();#iniciando a sessão 
+
     if (isset($_POST['ok'])){ #verificação do botao do formulario
         #criar uma nova senha
         $novasenha=substr(md5(time()),0,6); #nova senha
@@ -13,36 +15,27 @@
         $result = $conexao->query($sql);
         
         if(mysqli_num_rows($result)<1){ #nao entra no sistema           
-            echo '<br> nao achou o email';
+            $_SESSION['nao_achou_email']=true;  #email_notification    
 
-        }else{ #acho o email no bd
-            echo '<br> achou o email';
+        }else{ #acho o email no bd           
             //somente se o email for enviado sera alterado a senha no bd            
             if(1==1){
             #if (mail ($email_user, "Sua nova senha", "Sua nova senha: ".$novasenha)){
-                //função mail, em alguns host nao funcionam, como por exemplo:localhost, para fazer o teste se o email foi enviado para o usuario basta escrever um condição que seja verdadeira, como por exemplo if(1==1)
-                #mail ($destinatario, 'assunto', 'corpo_do_email'SS);                 
+                    #função mail, em alguns host nao funcionam, como por exemplo:localhost, para fazer o teste se o email foi enviado para o usuario basta escrever um condição que seja verdadeira, como por exemplo if(1==1)
+                    #mail ($destinatario, 'assunto', 'corpo_do_email'SS);                 
                     //QUERY para editar a senha do usuário no bd
                     $query_user = "UPDATE usuarios SET senha_user = '$nscriptografada' WHERE email_user = '$email_user'";
                     mysqli_query($conexao, $query_user);
     
                     if (mysqli_affected_rows($conexao)) {
-                        //$_SESSION['msg']="<p style='color:green'>Usuário editado com sucesso!</p>";
-                        //header("Location: index.php");
-                        echo "<p style='color:green'>Senha alterada com sucesso!<br> Verifique no seu e-mail a sua nova senha :)</p>";
-                       // header ("Location: index.php");
+                        $_SESSION['achou_email']=true;  #email_notification    
                     }else{
-                        echo "<p style='color:#f00'>Erro: Usuário não editado com sucesso!</p>";
-                    }
-            
+                        echo "<p style='color:#f00'>Erro: Usuário não editado com sucesso. Erro ao alterar no banco de dados!</p>";
+                    }   
             }
         }
-
-
-
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +44,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login - Tendencias </title>
+  <title>Cadastro - Tendências </title>
   <meta content="Pagina de login do Tendencias - System" name="description">
   <meta content="login" name="keywords">
 
@@ -80,47 +73,67 @@
 <body>
 
   <main>
-    <div class="pt-4 pb-2">
-        <h5 class="card-title text-center pb-0 fs-4">Recuperação de Senha do System - Tendências </h5>
-        <p class="text-center">Digite o e-mail cadastrado para recuperação de senha.</p>
-        
-        <!--<div class=" text-center" action=" " method="POST">
-                      <label for="email" class="form-label">E-mail</label>
-                      <input type="text" name="email" class="form-control" id="email" required>
-                       <div class="invalid-feedback">Entre com seu Senha válido!</div>
-        </div><br>-->
+    <div class="container">
 
-        <form action='' method="POST">
-        <!--<input placeholder="Seu e-mail" name="email_user" type="text">
-         <input name="ok" value="ok" type="submit">-->
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-            <div class="text-center ">
-                <input class="form-control" placeholder="Digite seu e-mail" name="email_user" type="text">
-                <input  class='btn btn-outline-primary' name="ok" value="Recuperar" type="submit">
-                <!-- <a class='btn btn-outline-primary' href="index.php">Voltar</a>-->
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                    <div class="pt-4 pb-2">
+                        <h5 class="card-title text-center pb-0 fs-4">Recuperação de Senha do System - Tendências </h5>
+                        <p class="text-center">Digite o e-mail cadastrado para recuperação de senha.</p>
+                    </div>
+
+                    <?php #verificação caso não é encontrado o e-mail no banco de dados
+                        if(isset($_SESSION['nao_achou_email'])):
+                    ?>
+                        <div class="alert alert-danger" role="alert">
+                        <p><bold class="fw-bold" >ERRO:</bold> E-mail não encontrado. Digite um e-mail válido.</p>
+                        </div>
+
+                    <?php  
+                        endif;
+                        unset($_SESSION['nao_achou_email']);
+                    
+
+                    #verificação caso ache o e-mail no banco de dados
+                        if(isset($_SESSION['achou_email'])):
+                    ?>
+                        <div class="alert alert-success" role="alert">
+                        <p><bold class="fw-bold">E-mail encontrado:</bold> verifique sua nova senha no seu e-mail.</p>
+                        </div>
+
+                    <?php  
+                        endif;
+                        unset($_SESSION['achou_email']);
+                    ?>
+
+                    <form action='' method="POST">
+                        <div class="text-center ">
+                            <input class="form-control" placeholder="Digite seu e-mail" name="email_user" type="text"><br>
+                            <input  class='btn btn-primary w-100' name="ok" value="Recuperar" type="submit"><br>
+                        </div>
+                    </form>                           
+                    <div class="text-center " style="margin-top: 10px">
+                       <a class='btn btn-outline-primary w-100' href="index.php">Voltar</a>
+                    </div>
+                 
+                </div>
+              </div>
+
+
             </div>
-
-
-
-        </form>        
-        
-        <div class="text-center ">
-            <a class='btn btn-outline-primary' href="index.php">Voltar</a>
+          </div>
         </div>
 
+      </section>
+
     </div>
-
-
-  <!--  
-
-    <form action='' method="POST">
-        <input placeholder="Seu e-mail" name="email_user" type="text">
-        <input name="ok" value="ok" type="submit">
-
-
-
-    </form>-->
-
   </main><!-- End #main -->
 
 

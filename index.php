@@ -59,7 +59,7 @@
                         if(isset($_SESSION['nao_autenticado'])):
                     ?>
                     <div class="alert alert-danger" role="alert">
-                      <p><bold>ERRO:</bold> Usuário ou senha inválidos.</p>
+                      <p><bold class="fw-bold">ERRO:</bold> Usuário ou senha inválidos.</p>
                     </div>
 
                     <?php  
@@ -67,39 +67,21 @@
                         unset($_SESSION['nao_autenticado']);
                     ?>
 
-
-
                   <form class="row g-3" action="testLogin.php" method="POST" >
 
-                   <!-- <div class="col-12">
-                      <label for="username" class="form-label">Username</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="username" required>
-                         <div class="invalid-feedback">Entre com seu Nome do usuário válido.</div>
-                      </div>
-                    </div> -->
                     <div class="col-12 " action="cadastro.php" method="POST">
                       <label for="username" class="form-label">Username</label>
                       <input type="text" name="username" class="form-control" id="username" required>
-                      <!-- <div class="invalid-feedback">Entre com seu Senha válido!</div>-->
                     </div><br>
 
                     <div class="col-12">
                       <label for="senha_user" class="form-label">Senha</label>
                       <input type="password" name="senha_user" class="form-control" id="senha_user" required>
                       <p class="small mb-0 text-end">Esqueceu sua senha? <a href="esqueceusenha.php">Recuperar Senha</a></p>
-                      <!-- <div class="invalid-feedback">Entre com seu Senha válido!</div>-->
                     </div>
-                    <!--<div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Lembrar-me</label>
-                      </div>
-                    </div>-->
+
                     <div class="col-12">
                       <input class="btn btn-primary w-100" type="submit" name="submit" id="submit" value="Entrar">
-                      <!-- <button class="btn btn-primary w-100" type="submit">Entrar</button>-->
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Não possui uma conta? <a href="cadastro.php">Criar uma Conta</a></p>

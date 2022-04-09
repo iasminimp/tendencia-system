@@ -2,7 +2,7 @@
     session_start();#iniciando a sessão 
 
     #pagina para verificação do login
-    print_r($_REQUEST); //verificação das informações do formulario de login estão chegando corretamente
+    //print_r($_REQUEST); //verificação das informações do formulario de login estão chegando corretamente
 
     #verificação se os dados estao preenchidos corretamente
     if(isset($_POST['submit']) && !empty($_POST['username']) && !empty($_POST['senha_user'])){
@@ -10,11 +10,6 @@
          include_once('config.php');
         $username =$_POST['username'];
         $senha_user = $_POST['senha_user'];
-
-        print_r('Username: '.$username);
-        print_r('Senha: '.$senha_user);
-
-        
         
         #verificando se existe esse usuario no banco de dados
         $sql = "SELECT * FROM usuarios WHERE username = '$username' and senha_user ='$senha_user'";
