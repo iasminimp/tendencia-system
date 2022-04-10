@@ -33,7 +33,6 @@ senha_user (varchar)
 ```
 A Conexao com o banco de dados é feita atraves do arquivo `config.php`
 
-<<<<<<< HEAD
 
 
 ## Fase de Testes
@@ -47,6 +46,8 @@ colocar:
 ```powershell
 if (1==1){
 ```
+Outras soluções possiveis para teste, da função `mail` estão disponiveis na documentação do `PHP`: `https://www.php.net/manual/pt_BR/function.mail.php`
+
 
 **Obs. 2**: ao colocar em um dominio, exemplo hostgator, pode ser que aja um problema na função header - Location do php. 
 Uma solução, que achei foi onde esta a função location, substituir pela função meta do html. Como por exemplo:
@@ -70,44 +71,6 @@ Algumas observações sobre o projeto
 [ok] fazer a verificação de usuario/ login <br>
 [ok] caso correto, entra no painel <br>
 
-=======
-
-
-## Fase de Testes
-**Obs. 1**: a função mail (nao funciona localmente/ localhost) so funciona quando esta hospedado, para testar se esta alterando a senha, basta colocar uma condicional verdadeira no codigo, como por exemplo if (1==1)
-Isso no arquivo `esqueceusenha.php`, onde está:
-
-```powershell
-if (mail ($email_user, "Sua nova senha", "Sua nova senha: ".$novasenha)){
-```
-colocar:
-```powershell
-if (1==1){
-```
-
-**Obs. 2**: ao colocar em um dominio, exemplo hostgator, pode ser que aja um problema na função header - Location do php. 
-Uma solução, que achei foi onde esta a função location, substituir pela função meta do html. Como por exemplo:
-
-```powershell
-header ("Location: index.php");
-```
-
-Substituir por:
-
-```powershell
-<meta http-equiv="refresh" content="0;url=https:url_do_projeto/index.php">
-```
-
-## Diário da Documentação
-
-Algumas observações sobre o projeto 
-
-* 07/04 -09:42: cadastro do usuario no bd ja esta funcionando normal
-
-[ok] fazer a verificação de usuario/ login <br>
-[ok] caso correto, entra no painel <br>
-
->>>>>>> 9278a862021ed75102b89600d0a2c92ac363e47f
 * 07/04 - 18:41: funcionando a verificação do login, ja entra no painel adm/ sistema
 
 [OK]caso contrario barra o usuario, e pede pra ele criar um cadastro; <br>
@@ -125,12 +88,14 @@ Algumas observações sobre o projeto
 - fazer ajustes na view de recuperação de senha, front-end (notificações e campos do formulário);
 08/04- 11:46
 
-<<<<<<< HEAD
 11:15 - 09/04: fazer pagina de usuário cadastrado com sucesso;
 
 
-=======
->>>>>>> 9278a862021ed75102b89600d0a2c92ac363e47f
+
+14:25 - API Testes
+
+API key: XI1QJSWPOJLIN9AZ
+
 ## To-do List -------------------------------
 	 [] passar para parte da API; 
 	 []passar todo o codigo para o github; 
@@ -144,8 +109,4 @@ Algumas observações sobre o projeto
 * usar um criptografia melhor para o armazenamento de senha; (hash, md5); <br>
 * o usuário ter a possibilidade de criar uma nova senha, e nao o sistema da uma nova senha; <br>
 * verificação de senha, podem existir emails iguais; (ao mudar a senha, ira mudar de todos os usuario que possuem aquele determinado email); <br>
-<<<<<<< HEAD
 * a pessoa pode esquecer o nome de usuario, nao tem como recuperar: fazer algo mais para frente para tentar lifar com esse tipo de caso; <br>
-=======
-* a pessoa pode esquecer o nome de usuario, nao tem como recuperar: fazer algo mais para frente para tentar lifar com esse tipo de caso; <br>
->>>>>>> 9278a862021ed75102b89600d0a2c92ac363e47f

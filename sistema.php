@@ -52,6 +52,8 @@
     <div class="pt-4 pb-2">
         <h5 class="card-title text-center pb-0 fs-4">Entrou no Painel do System - Tendências </h5>
         <p class="text-center">Seja Bem Vindo <u><?php echo $logado; ?> </u></p>
+        <p class="text-center">Selecione a API que deseja consultar:</p>
+        
         
         <div class="text-center ">
             <a href="sair.php" class="btn btn-outline-danger"> Sair</a>
