@@ -53,6 +53,19 @@
         <h5 class="card-title text-center pb-0 fs-4">Entrou no Painel do System - Tendências </h5>
         <p class="text-center">Seja Bem Vindo <u><?php echo $logado; ?> </u></p>
         <p class="text-center">Selecione a API que deseja consultar:</p>
+        <div class="text-center ">
+            <a href="api_one.php" class="btn btn-primary"> Intraday</a><br><br>
+        </div>
+        <div class="text-center ">
+            <a href="api_dois.php" class="btn btn-primary"> Daily</a><br><br>
+        </div>
+        <div class="text-center ">
+            <a href="api_tres.php" class="btn btn-primary"> Weekly</a><br><br>
+        </div>
+        
+        <div class="text-center ">
+            <a href="api_four.php" class="btn btn-primary"> Monthly</a><br><br>
+        </div>
         
         
         <div class="text-center ">

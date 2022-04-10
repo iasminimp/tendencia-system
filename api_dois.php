@@ -13,24 +13,22 @@
     
     #sistema - api
     
-    $json = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=XI1QJSWPOJLIN9AZ');
-    $data = json_decode($json,true);
+    
+    $json = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=XI1QJSWPOJLIN9AZ');
+    $data_two = json_decode($json,true);
 
-    $information = $data["Meta Data"]["1. Information"];
-    $symbol = $data["Meta Data"]["2. Symbol"];       
-    $last_refreshed = $data["Meta Data"]["3. Last Refreshed"];
-    $interval = $data["Meta Data"]["4. Interval"];
-    $out_size = $data["Meta Data"]["5. Output Size"];
-    $time_zone = $data["Meta Data"]["6. Time Zone"];
+    $information_two = $data_two["Meta Data"]["1. Information"];
+    $symbol_two = $data_two["Meta Data"]["2. Symbol"];       
+    $last_refreshed_two = $data_two["Meta Data"]["3. Last Refreshed"];
+
+    $out_size_two = $data_two["Meta Data"]["4. Output Size"];
+    $time_zone_two = $data_two["Meta Data"]["5. Time Zone"];
     
 
-    $time_series = $data["Time Series (5min)"];
-        #var_dump($time_series);
-        //echo "Time Series: ". $time_series."<br>";
+    $time_series_two = $data_two["Time Series (Daily)"];
+
     
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -40,7 +38,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>API - Intraday (Series) </title>
+  <title>API - Daily (Series) </title>
   <meta content="Pagina de login do Tendencias - System" name="description">
   <meta content="login" name="keywords">
 
@@ -77,8 +75,8 @@
           <div class="card">
             <div class="card-body">
             <br>  
-            <h5 class="card-title text-center">Series Intraday - Meta Data</h5>
-              <p>Resultados da API - Series Intraday, Meta Data</p>
+            <h5 class="card-title text-center">Series Daily - Meta Data</h5>
+              <p>Resultados da API - Series Daily, Meta Data</p>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -95,37 +93,31 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>Information</td>
-                    <td><?php echo $information;?></td>
+                    <td><?php echo $information_two;?></td>
 
                   </tr>
                   <tr>
                     <th scope="row">2</th>
                     <td>Symbol</td>
-                    <td><?php echo $symbol;?></td>
+                    <td><?php echo $symbol_two;?></td>
 
                   </tr>
                   <tr>
                     <th scope="row">3</th>
                     <td>Last Refreshed</td>
-                    <td><?php echo $last_refreshed;?></td>
-
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Interval</td>
-                    <td><?php echo $interval;?></td>
+                    <td><?php echo $last_refreshed_two;?></td>
 
                   </tr>
                   <tr>
                     <th scope="row">5</th>
                     <td>Output Size</td>
-                    <td><?php echo $out_size;?></td>
+                    <td><?php echo $out_size_two;?></td>
 
                   </tr>
                   <tr>
                     <th scope="row">6</th>
                     <td>Time Zone</td>
-                    <td><?php echo  $time_zone?></td>
+                    <td><?php echo  $time_zone_two?></td>
 
                   </tr>
                 </tbody>
@@ -145,15 +137,15 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title text-center">Series Intraday - Time Series</h5>
-              <p>Resultados da API - Series Intraday, Time Series (5min).</p>
+              <h5 class="card-title text-center">Series Daily - Time Series</h5>
+              <p>Resultados da API - Series Daily, Time Series (Daily).</p>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Time Series (5min)</th>
+                    <th scope="col">Time Series (Daily)</th>
                     <th scope="col">Open</th>
                     <th scope="col">High</th>
                     <th scope="col">Low</th>
@@ -165,20 +157,20 @@
                 <tbody>
                   <tr>
                     <?php
-                        $cont=1; #contator
-                        #$time_series = array ['Times Series (5min)']
+                        $cont_two=1; #contator
+                        #$time_series_two = array ['Times Series (5min)']
                         #ts = data e hora (2022-04-08 19:55:00)
                         #nome_ind = open, high, low
 
                         #valor = valor dentro de dados, 127.7900 ...
-                        foreach ($time_series as $ts =>$dados){
+                        foreach ($time_series_two as $ts_two =>$dados_two){
                     ?>
-                    <th scope="row"><?php echo($cont++);?></th>
-                        <td><?php echo $ts ?></td>
+                    <th scope="row"><?php echo($cont_two++);?></th>
+                        <td><?php echo $ts_two ?></td>
                     <?php 
-                        foreach ($dados as $nome_ind => $valor){ 
+                        foreach ($dados_two as $nome_ind_two => $valor_two){ 
                     ?>
-                        <td><?php echo $valor;
+                        <td><?php echo $valor_two;
                         }
                     ?></td>
                     </tr>

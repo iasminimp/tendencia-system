@@ -23,7 +23,7 @@ Criação das telas:
 Conexão com o banco de dados phpMyAdmin;
 ### Estrutura do Banco de Dados 
 
-```powershell
+```mysql
 dbname = tendencia_bd
 id  (int - key)
 nome_user (varchar)
@@ -33,6 +33,19 @@ senha_user (varchar)
 ```
 A Conexao com o banco de dados é feita atraves do arquivo `config.php`
 
+## API
+
+Link da API: https://www.alphavantage.co
+Documentação da API: https://www.alphavantage.co/documentation/
+Chave de API gratuita : XI1QJSWPOJLIN9AZ
+
+
+A API dada como desafio possui varias subdivisões sobre ações, e agrupadas por 5 categorias:
+1 - APIs de dados de ações de séries temporais principais;
+2 -  Dados fundamentais;
+3 -  Moedas físicas e digitais/criptográficas (por exemplo, Bitcoin);
+4 - Indicadores econômicos
+5 - Indicadores Técnicos
 
 
 ## Fase de Testes
