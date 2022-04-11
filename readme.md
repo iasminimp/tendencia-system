@@ -35,17 +35,17 @@ A Conexao com o banco de dados é feita atraves do arquivo `config.php`
 
 ## API
 
-Link da API: https://www.alphavantage.co
-Documentação da API: https://www.alphavantage.co/documentation/
-Chave de API gratuita : XI1QJSWPOJLIN9AZ
+Link da API: https://www.alphavantage.co <br>
+Documentação da API: https://www.alphavantage.co/documentation/ <br>
+Chave de API gratuita : `XI1QJSWPOJLIN9AZ` <br>
 
 
-A API dada como desafio possui varias subdivisões sobre ações, e agrupadas por 5 categorias:
-1 - APIs de dados de ações de séries temporais principais;
-2 -  Dados fundamentais;
-3 -  Moedas físicas e digitais/criptográficas (por exemplo, Bitcoin);
-4 - Indicadores econômicos
-5 - Indicadores Técnicos
+A API dada como desafio possui varias subdivisões sobre ações, e agrupadas por 5 categorias: <br>
+1 - APIs de dados de ações de séries temporais principais; <br>
+2 -  Dados fundamentais; <br>
+3 -  Moedas físicas e digitais/criptográficas (por exemplo, Bitcoin); <br>
+4 - Indicadores econômicos; <br>
+5 - Indicadores Técnicos; <br>
 
 
 ## Fase de Testes
@@ -101,16 +101,15 @@ Algumas observações sobre o projeto
 - fazer ajustes na view de recuperação de senha, front-end (notificações e campos do formulário);
 08/04- 11:46
 
-11:15 - 09/04: fazer pagina de usuário cadastrado com sucesso;
+* 11:15 - 09/04: fazer pagina de usuário cadastrado com sucesso;
 
-
-
-14:25 - API Testes
-
+* 14:25- 09/04: API Testes
 API key: XI1QJSWPOJLIN9AZ
 
+* 10:00 - 10/04: testes com API com o metodo get
+
 ## To-do List -------------------------------
-	 [] passar para parte da API; 
+	 [x] passar para parte da API; 
 	 []passar todo o codigo para o github; 
 	 []fazer a documentação da aplicação; 
 	 []Adicional: Upar para o dominio na hostgator para testes;
@@ -123,3 +122,4 @@ API key: XI1QJSWPOJLIN9AZ
 * o usuário ter a possibilidade de criar uma nova senha, e nao o sistema da uma nova senha; <br>
 * verificação de senha, podem existir emails iguais; (ao mudar a senha, ira mudar de todos os usuario que possuem aquele determinado email); <br>
 * a pessoa pode esquecer o nome de usuario, nao tem como recuperar: fazer algo mais para frente para tentar lifar com esse tipo de caso; <br>
+* um modo mais seguro de armazenar a senha no banco de dados;

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
  <html>
  <head>
-      <title>Weekly Time Serie </title>
+      <title>TEST </title>
  </head>
 
 
  <body>
-        <h5> Weekly Time Serie</h5>
+        <h5> TEST</h5>
       <?php
        /* $hg = file_get_contents("https://api.hgbrasil.com/weather?woeid=452041");
         echo $hg;
@@ -14,21 +14,44 @@
         // replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#XI1QJSWPOJLIN9AZ
         //$json = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=XI1QJSWPOJLIN9AZ');
 
-        $json = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=IBM&apikey=XI1QJSWPOJLIN9AZ');
+       // $json = file_get_contents('https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=IBM&apikey=XI1QJSWPOJLIN9AZ');
 
+     //$data = json_decode($json,true);
+
+     $json = file_get_contents('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=XI1QJSWPOJLIN9AZ');
      $data = json_decode($json,true);
+    var_dump($data);
 
-         // print_r($data);
-        
-        //var_dump($data);
 
-        echo "* Meta Data - Monthly Time Series <br>";
+    $json = file_get_contents('https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=tesco&apikey=demo');
 
-        $information = $data["Meta Data"]["1. Information"];
-        echo "Information: ".$information ."<br>";
+$data = json_decode($json,true);
 
-       ///var_dump($data["Meta Data"]["2. Symbol"]); 
-        $symbol = $data["Meta Data"]["2. Symbol"];
+print_r($data);
+
+       echo "* Global Quote <br>";
+
+        $symbol = $data["Global Quote"]["01. symbol"];
+        $open = $data["Global Quote"]["02. open"];
+        $high = $data["Global Quote"]["03. high"];
+        $low = $data["Global Quote"]["04. low"];
+        $price = $data["Global Quote"]["05. price"];
+        $last_trading = $data["Global Quote"]["07. latest trading day"];
+        $prev_close = $data["Global Quote"]["08. previous close"];
+        $change = $data["Global Quote"]["09. change"];
+        $change_per = $data["Global Quote"]["10. change percent"];
+        echo $symbol."<br>";
+        echo $open."<br>";
+        echo $high."<br>";
+        echo $low."<br>";
+        echo $price."<br>";
+        echo $last_trading."<br>";
+        echo $prev_close."<br>";
+        echo $change."<br>";
+        echo $change_per."<br>";
+        /*echo $symbol;
+        echo $symbol;*/
+
         echo "Symbol: ".$symbol."<br>";
         //var_dump($data["Meta Data"]["3. Last Refreshed"]); 
         $last_refreshed = $data["Meta Data"]["3. Last Refreshed"];
@@ -38,7 +61,7 @@
         echo "Time Zone: ".$time_zone."<br>";
         
         //var_dump($data["Time Series (5min)"]); //pegando as informações desse vetor
-        $time_series = $data["Monthly Time Series"];
+        $time_series = $data["Weekly Adjusted Time Series"];
         #var_dump($time_series);
         //echo "Time Series: ". $time_series."<br>";
           foreach ($time_series as $ts =>$dados){
@@ -57,7 +80,6 @@
         //var_dump($data["Time Series (5min)"]['2022-04-08 19:55:00']); //primeiro elemento do vetor TIME-SERIES
 
         //var_dump($data);
-
         exit;
 
 

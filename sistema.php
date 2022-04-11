@@ -66,6 +66,15 @@
         <div class="text-center ">
             <a href="api_four.php" class="btn btn-primary"> Monthly</a><br><br>
         </div>
+
+        <div class="text-center ">
+            <a href="api_five.php" class="btn btn-primary"> Global Quote </a><br><br>
+        </div>
+
+        <div class="text-center ">
+            <a href="api_six.php" class="btn btn-primary"> Symbol Search - Best Matches </a><br><br>
+        </div>
+        
         
         
         <div class="text-center ">
