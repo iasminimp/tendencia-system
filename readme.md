@@ -75,44 +75,12 @@ Substituir por:
 <meta http-equiv="refresh" content="0;url=https:url_do_projeto/index.php">
 ```
 
-## Diário da Documentação
+## Teste - Dominio
 
-Algumas observações sobre o projeto 
+Criei um subdominio dentro do site de hospedagens hostgator para testes, segue o link:<br>
 
-* 07/04 -09:42: cadastro do usuario no bd ja esta funcionando normal
+Site: `https://tendencia.iasminmarques.com.br/index.php`
 
-[ok] fazer a verificação de usuario/ login <br>
-[ok] caso correto, entra no painel <br>
-
-* 07/04 - 18:41: funcionando a verificação do login, ja entra no painel adm/ sistema
-
-[OK]caso contrario barra o usuario, e pede pra ele criar um cadastro; <br>
-[OK]criar uma notificação caso o usuario nao digite a senha ou usuario correto; <br>
-
-* 07/04 - 18:57: adicionado a notificação de erro 
-
-
-* 08/04 - 08:40: recuperação de senha criada/ esqueceu a senha? <br>
-[ok] criação da view recuperar senha;<br>
-[ok] fazer a validação de email (se possui ou nao esse email no banco de dados); <br>
-[ok] fazer o update da senha no bd e enviar o email com a nova senha para o usuario;<br>
-
-
-- fazer ajustes na view de recuperação de senha, front-end (notificações e campos do formulário);
-08/04- 11:46
-
-* 11:15 - 09/04: fazer pagina de usuário cadastrado com sucesso;
-
-* 14:25- 09/04: API Testes
-API key: XI1QJSWPOJLIN9AZ
-
-* 10:00 - 10/04: testes com API com o metodo get
-
-## To-do List -------------------------------
-	 [x] passar para parte da API; 
-	 []passar todo o codigo para o github; 
-	 []fazer a documentação da aplicação; 
-	 []Adicional: Upar para o dominio na hostgator para testes;
 
 
 ## Funções para se adicionar futuramente
