@@ -7,10 +7,10 @@
 
 
 ## Abordagem
-O desafio foi analisado e divido em duas partes, front-end e back-end e dividido em sub-tarefas;
+O desafio foi analisado e dividido em duas partes, front-end e back-end e dividido em sub-tarefas;
 
 ## Linguagem de Programação
-Foram escolhidas as linguagens: html5, css3, javaScript, php, bootstrap, json, phpMyAdmin ;
+Foram escolhidas as tecnologias: html5, css3, javaScript, php, bootstrap, json, phpMyAdmin ;
 
 ## Front-end
 Criação das telas:
@@ -20,8 +20,10 @@ Criação das telas:
 * Tela de Recuperação de senha;
 
 ## Back-end
-Conexão com o banco de dados phpMyAdmin;
+Conexão com o banco de dados foi feita em localhost, utilizando o phpMyAdmin;
 ### Estrutura do Banco de Dados 
+
+Estrutura do banco de dados, `phpMyAdmin` <br>
 
 ```mysql
 dbname = tendencia_bd
@@ -31,21 +33,37 @@ email_user (varchar)
 username (varchar)
 senha_user (varchar)
 ```
-A Conexao com o banco de dados é feita atraves do arquivo `config.php`
+
+Estrutura da conexão com o banco de dados, arquivo: `cadastro.php` <br>
+
+```mysql
+$dbHost = 'Localhost';
+$dbUsername= 'root';
+$dbPassWord='';
+$dbName='tendencia_bd';
+
+$conexao = new mysqli( $dbHost, $dbUsername,$dbPassWord,$dbName);
+```
+
+A Conexão com o banco de dados é feita através do arquivo `config.php`
 
 ## API
 
 Link da API: https://www.alphavantage.co <br>
 Documentação da API: https://www.alphavantage.co/documentation/ <br>
-Chave de API gratuita : `XI1QJSWPOJLIN9AZ` <br>
+Chave de API gratuita, utilizada : `XI1QJSWPOJLIN9AZ` <br>
 
 
-A API dada como desafio possui varias subdivisões sobre ações, e agrupadas por 5 categorias: <br>
+A API dada como desafio possui várias subdivisões sobre ações, e agrupadas por 5 categorias: <br>
 1 - APIs de dados de ações de séries temporais principais; <br>
 2 -  Dados fundamentais; <br>
 3 -  Moedas físicas e digitais/criptográficas (por exemplo, Bitcoin); <br>
 4 - Indicadores econômicos; <br>
 5 - Indicadores Técnicos; <br>
+
+Para demonstração da API escolhi um symbol, IBM, e cinco tipos de buscas diferentes (intraday, daily, weekly, monthly, global quote) e uma demonstração de Matches de Symbol (symbolSearch). <br>
+
+Selecionado o tipo de informação que deseja visualizar, o usuário pode procurar dentro das tabelas alguma informação especifica de alguma data/ hora especifica sobre determinada ação. <br>  
 
 
 ## Fase de Testes
@@ -79,15 +97,15 @@ Substituir por:
 
 Criei um subdominio dentro do site de hospedagens hostgator para testes, segue o link:<br>
 
-Site: `https://tendencia.iasminmarques.com.br/index.php`
+Site: https://tendencia.iasminmarques.com.br/index.php
 
 
 
 ## Funções para se adicionar futuramente
-* funções para se adicionar futuramente: o recap/check: sou humano; <br>
-* funções para se adicionar futuramente: melhorar a verificação de troca de senha; <br>
-* usar um criptografia melhor para o armazenamento de senha; (hash, md5); <br>
-* o usuário ter a possibilidade de criar uma nova senha, e nao o sistema da uma nova senha; <br>
-* verificação de senha, podem existir emails iguais; (ao mudar a senha, ira mudar de todos os usuario que possuem aquele determinado email); <br>
-* a pessoa pode esquecer o nome de usuario, nao tem como recuperar: fazer algo mais para frente para tentar lifar com esse tipo de caso; <br>
-* um modo mais seguro de armazenar a senha no banco de dados;
+* O recap/check: sou humano; <br>
+* Melhorar a verificação de troca de senha e armazenamento da senha no banco de dados; <br>
+* Usar um criptografia melhor para o armazenamento de senha; (hash, md5*); <br>
+* O usuário ter a possibilidade de criar uma nova senha, e nao o sistema da uma nova senha; <br>
+* Verificação de senha, podem existir emails iguais; (ao mudar a senha, ira mudar de todos os usuario que possuem aquele determinado email); <br>
+* A pessoa pode esquecer o nome de usuario, nao tem como recuperar: adicionar função para lidar com esse tipo de caso; <br>
+* Exibir informações de acordo com o symbol, intervalo que o usuário desejar (sobre API).

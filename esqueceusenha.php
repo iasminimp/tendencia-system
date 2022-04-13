@@ -5,7 +5,7 @@
     if (isset($_POST['ok'])){ #verificação do botao do formulario
         #criar uma nova senha
         $novasenha=substr(md5(time()),0,6); #nova senha
-        $nscriptografada = md5(md5($novasenha)); #nova senha encriptografada
+        #$nscriptografada = md5(md5($novasenha)); #nova senha encriptografada
         #$nscriptografada = $novasenha;
 
         $email_user = $_POST['email_user'];   
@@ -24,7 +24,7 @@
                     #função mail, em alguns host nao funcionam, como por exemplo:localhost, para fazer o teste se o email foi enviado para o usuario basta escrever um condição que seja verdadeira, como por exemplo if(1==1)
                     #mail ($destinatario, 'assunto', 'corpo_do_email'SS);                 
                     //QUERY para editar a senha do usuário no bd
-                    $query_user = "UPDATE usuarios SET senha_user = '$nscriptografada' WHERE email_user = '$email_user'";
+                    $query_user = "UPDATE usuarios SET senha_user = '$novasenha' WHERE email_user = '$email_user'";
                     mysqli_query($conexao, $query_user);
     
                     if (mysqli_affected_rows($conexao)) {
@@ -45,8 +45,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Cadastro - Tendências </title>
-  <meta content="Pagina de login do Tendencias - System" name="description">
-  <meta content="login" name="keywords">
+  <meta content="Esqueceu a senha Tendencias - System" name="description">
+  <meta content="recuperar senha" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -56,7 +56,7 @@
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS  -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -64,8 +64,7 @@
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
+  <!--  Main CSS  -->
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
@@ -134,10 +133,10 @@
       </section>
 
     </div>
-  </main><!-- End #main -->
+  </main>
 
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.min.js"></script>
@@ -146,8 +145,6 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
